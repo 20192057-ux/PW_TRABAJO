@@ -1,0 +1,14 @@
+/* Override Bootstrap defaults to keep neutral styling */
+.navbar-g5 {
+    background-color: whitesmoke;
+}
+
+.btn-g5 {
+    background-color: #e0e0e0;
+    color: black;
+    border-radius: 50px;
+}
+
+.btn-g5:hover{
+    background-color: #d6d6d6 ;
+}
