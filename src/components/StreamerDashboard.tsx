@@ -1,28 +1,30 @@
-import React from "react";
 
-const Dashboard: React.FC = () => {
-    // Aquí guardaremos las horas transmitidas
-    const horasTransmitidas: number = 120; // tipo explícito en TypeScript
+const StreamerDashboard = () => {
+  const horasTotales = 120 // Ejemplo, luego se puede hacer dinámico
 
-    return (
-        <div
-            style={{
-                textAlign: "center",
-                padding: "20px",
-                backgroundColor: "#1e1e1e",
-                color: "#fff",
-                borderRadius: "12px",
-                margin: "20px",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.3)",
-            }}
-        >
-            <h2>🎮 Dashboard del Streamer</h2>
-            <p style={{ fontSize: "18px", marginTop: "10px" }}>
-                Horas de transmisión totales:{" "}
-                <strong>{horasTransmitidas} h</strong>
-            </p>
+  return (
+    <div className="container mt-4">
+      <div className="card shadow-sm p-4 text-center">
+        <h2 className="text-primary mb-3">🎮 Dashboard del Streamer</h2>
+        <p className="fs-5">
+          <strong>Horas totales transmitidas:</strong> {horasTotales} h
+        </p>
+        <div className="progress mt-3" style={{ height: "20px" }}>
+          <div
+            className="progress-bar progress-bar-striped bg-success"
+            role="progressbar"
+            style={{ width: `${(horasTotales / 200) * 100}%` }}
+            aria-valuenow={horasTotales}
+            aria-valuemin={0}
+            aria-valuemax={200}
+          >
+            {(horasTotales / 200) * 100}%
+          </div>
         </div>
-    );
-};
+      </div>
+    </div>
+  )
+}
 
-export default Dashboard;
+
+export default StreamerDashboard;
